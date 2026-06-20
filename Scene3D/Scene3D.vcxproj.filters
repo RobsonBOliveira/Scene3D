@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="DXUT">
+      <UniqueIdentifier>{479eea2f-886f-4fec-a5a9-aa103201bb56}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DXUT\Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="DXUT\Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="App">
+      <UniqueIdentifier>{25edf0c9-f58c-40eb-9f95-f35161a53c4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App\Header Files">
+      <UniqueIdentifier>{fd41cf16-8429-4e8f-92d5-4af320eb6f89}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App\Source Files">
+      <UniqueIdentifier>{25f29fa1-8c39-44aa-8a61-2e3f0821707b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App\Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="App\Shaders">
+      <UniqueIdentifier>{62d4ab6a-3c34-4c76-a900-42ade87ef088}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DXUT\External Files">
+      <UniqueIdentifier>{502df654-864e-45bf-8e66-3843acdebc95}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="App.cpp">
+      <Filter>DXUT\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine.cpp">
+      <Filter>DXUT\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Error.cpp">
+      <Filter>DXUT\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics.cpp">
+      <Filter>DXUT\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Input.cpp">
+      <Filter>DXUT\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Timer.cpp">
+      <Filter>DXUT\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Window.cpp">
+      <Filter>DXUT\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Geometry.cpp">
+      <Filter>DXUT\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>DXUT\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene3D.cpp">
+      <Filter>App\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Pipeline.cpp">
+      <Filter>App\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>DXUT\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DDS.cpp">
+      <Filter>DXUT\External Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WIC.cpp">
+      <Filter>DXUT\External Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="App.h">
+      <Filter>DXUT\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DXUT.h">
+      <Filter>DXUT\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine.h">
+      <Filter>DXUT\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Error.h">
+      <Filter>DXUT\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics.h">
+      <Filter>DXUT\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Input.h">
+      <Filter>DXUT\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Mesh.h">
+      <Filter>DXUT\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>DXUT\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Types.h">
+      <Filter>DXUT\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Window.h">
+      <Filter>DXUT\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Geometry.h">
+      <Filter>DXUT\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>DXUT\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CBuffer.h">
+      <Filter>DXUT\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Colors.h">
+      <Filter>DXUT\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IBuffer.h">
+      <Filter>DXUT\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VBuffer.h">
+      <Filter>DXUT\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene3D.h">
+      <Filter>App\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>DXUT\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DDS.h">
+      <Filter>DXUT\External Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WIC.h">
+      <Filter>DXUT\External Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="Pixel.hlsl">
+      <Filter>App\Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="Vertex.hlsl">
+      <Filter>App\Shaders</Filter>
+    </FxCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resources.rc">
+      <Filter>App\Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
