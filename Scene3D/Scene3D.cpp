@@ -42,7 +42,8 @@ void Scene3D::Init()
     // Geometria: V�rtices e �ndices
     // ------------------------------
 
-    Grid grid(8.0f, 4.0f, 2, 2, DimGray);
+    Grid grid(16.0f, 9.0f, 2, 2);
+    Box box(7.0f, 0.1f, 4.0f);
 
     // ----------------------
     // Cria��o dos Materiais
@@ -53,33 +54,57 @@ void Scene3D::Init()
     asfalt.FresnelR0 = XMFLOAT3(0.15f, 0.15f, 0.15f);
     asfalt.Roughness = 0.8f;
 
+    Material wood;
+    wood.Albedo = XMFLOAT4(0.87f, 0.82f, 0.73f, 1.0f);
+    wood.FresnelR0 = XMFLOAT3(0.02f, 0.02f, 0.02f);
+    wood.Roughness = 0.80f;
+
+    Material plastic;
+    plastic.Albedo = XMFLOAT4(0.5f, 0.5f, 0.5f, 1.0f);
+    plastic.FresnelR0 = XMFLOAT3(0.04f, 0.04f, 0.04f);
+    plastic.Roughness = 0.4f;
+
     // --------------------
     // Cria��o dos Objetos 
     // --------------------
 
-    Object roadL;
-    XMStoreFloat4x4(&roadL.world, 
+    Object table;
+    XMStoreFloat4x4(&table.world, 
         XMMatrixTranslation(0.0f, 1.0f, 2.05f));
-    roadL.mesh = new Mesh(grid);
-    roadL.vbuffer = new VertexBuffer<Vertex>(grid);
-    roadL.ibuffer = new IndexBuffer<uint>(grid);
-    roadL.cbuffer = new ConstantBuffer<Constants>();
-    roadL.material = new ConstantBuffer<Material>(&asfalt);
-    roadL.texture = new Texture("Resources/Malenia.jpg");
-    //roadL.texture = new Texture("Resources/Scene3D.jpg");
-    scene.push_back(roadL);
+    table.mesh = new Mesh(box);
+    table.vbuffer = new VertexBuffer<Vertex>(box);
+    table.ibuffer = new IndexBuffer<uint>(box);
+    table.cbuffer = new ConstantBuffer<Constants>();
+    table.material = new ConstantBuffer<Material>(&wood);
+    table.texture = new Texture("Resources/Wood.jpg");
+    scene.push_back(table);
 
-    Object roadR;
-    XMStoreFloat4x4(&roadR.world,
-        XMMatrixTranslation(0.0f, 0.0f, 2.05f));
-    roadR.mesh = new Mesh(grid);
-    roadR.vbuffer = new VertexBuffer<Vertex>(grid);
-    roadR.ibuffer = new IndexBuffer<uint>(grid);
-    roadR.cbuffer = new ConstantBuffer<Constants>();
-    roadR.material = new ConstantBuffer<Material>(&asfalt);
-    //roadR.texture = new Texture("Resources/Cobblestone.jpg");
-    roadR.texture = new Texture("Resources/Road.jpg");
-    scene.push_back(roadR);
+    Object tv;
+    XMStoreFloat4x4(&tv.world, 
+        XMMatrixTranslation(0.0f, 0.3f, -3.3f) *
+        XMMatrixRotationX(XMConvertToRadians(90.0f)) *
+        XMMatrixScaling(0.8f, 0.8f, 0.8f));
+    tv.mesh = new Mesh(box);
+    tv.vbuffer = new VertexBuffer<Vertex>(box);
+    tv.ibuffer = new IndexBuffer<uint>(box);
+    tv.cbuffer = new ConstantBuffer<Constants>();
+    tv.material = new ConstantBuffer<Material>(&plastic);
+    tv.texture = new Texture("Resources/Plastic.jpg");
+    scene.push_back(tv);
+
+    Object panel;
+    XMStoreFloat4x4(&panel.world, 
+        XMMatrixTranslation(0.0f, 1.0f, 9.0f) *
+        XMMatrixRotationX(XMConvertToRadians(90.0f)) *
+        XMMatrixRotationZ(XMConvertToRadians(180.0f)) *
+        XMMatrixScaling(0.3f, 0.3f, 0.3f));
+    panel.mesh = new Mesh(grid);
+    panel.vbuffer = new VertexBuffer<Vertex>(grid);
+    panel.ibuffer = new IndexBuffer<uint>(grid);
+    panel.cbuffer = new ConstantBuffer<Constants>();
+    panel.material = new ConstantBuffer<Material>(&plastic);
+    panel.texture = new Texture("Resources/Malenia.jpg");
+    scene.push_back(panel);
 
     // ---------------------
 
@@ -317,7 +342,7 @@ int APIENTRY WinMain(_In_ HINSTANCE hInstance,
         engine->window->Mode(ASPECTRATIO);
         engine->window->Size(1024, 720);
         engine->window->Color(25, 25, 25);
-        engine->window->Title("Road");
+        engine->window->Title("Scene3D");
         engine->window->Icon("Icon");
         engine->window->Cursor("Cursor");
         engine->window->LostFocus(Scene3D::Pause);
@@ -336,7 +361,7 @@ int APIENTRY WinMain(_In_ HINSTANCE hInstance,
     catch (Error& e)
     {
         // exibe mensagem em caso de erro
-        MessageBox(nullptr, e.ToString().data(), "Road", MB_OK);
+        MessageBox(nullptr, e.ToString().data(), "Scene3D", MB_OK);
     }
 
     return 0;
